@@ -1,5 +1,6 @@
-package com.e_commerce.app.entity;
+package com.e_commerce.app.model;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -10,16 +11,28 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
-@NoArgsConstructor
 @Getter
 @Setter
 @AllArgsConstructor
-public class Category {
-
+@NoArgsConstructor
+public class Product {
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
-	private String name;
-	private String imageName;
-	private Boolean isActive;
+	
+	@Column(length=500)
+	private String title;
+	@Column(length=5000)
+	private String description;
+	
+	private String category;
+	
+	private Double price;
+	
+	private int stock;
+	
+	private String image;
+	
+	
 }

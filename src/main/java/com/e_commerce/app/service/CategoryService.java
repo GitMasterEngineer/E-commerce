@@ -2,7 +2,7 @@ package com.e_commerce.app.service;
 
 import java.util.List;
 
-import com.e_commerce.app.entity.Category;
+import com.e_commerce.app.model.Category;
 
 public interface CategoryService {
 
@@ -11,4 +11,8 @@ public interface CategoryService {
 	Boolean existCategory(String name);
 
 	List<Category> getAllCategory();
+	
+	public Boolean deleteCategory(int id);
+	
+	public Category getCategoryById(int id);
 }
